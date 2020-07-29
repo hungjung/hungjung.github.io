@@ -2747,7 +2747,7 @@ $ajaxRequest = isset($_SERVER['HTTP_X_REQUESTED_WITH']) &amp;&amp; ($_SERVER['HT
 //判別是否接收ajax請求，如果不是請它走開
 if(!$ajaxRequest)
 {
-	echo '不當操作，請依正常程序操作！';
+	http_response_code(403);
 	exit(0);
 }
 
