@@ -2741,14 +2741,16 @@ pre code {
 
             <p id="bkmrk-%E6%AD%A4%E6%AC%A1%E5%AE%89%E8%A3%9D%E7%92%B0%E5%A2%83%E7%82">此次安裝環境為CentOS6.X</p>
 <pre id="bkmrk-%23-%E5%89%8D%E7%BD%AE%E5%AE%89%E8%A3%9D-yum-i"><code class="language-bash"># 前置安裝
-yum install GeoIP GeoIP-devel
-yum install ncurses-devel
+yum install GeoIP GeoIP-devel ncurses-devel -y
 
 # 下載goaccess並編譯安裝
+cd ~
 wget https://tar.goaccess.io/goaccess-1.4.tar.gz
 tar -xzvf goaccess-1.4.tar.gz
 cd goaccess-1.4
 ./configure --enable-utf8 --enable-geoip=legacy
+make
+make install
 
 hash -r
 
